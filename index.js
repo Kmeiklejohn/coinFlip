@@ -7,9 +7,14 @@ var coin = {
    
     }, 
     toString: function() {
+        
+        
         if(coin.flip() === 0){
-            return this.state = "H";
+           
+          return this.state = "H";
+           
         }else{
+        
             return this.state = "T";
         }
         
@@ -19,11 +24,16 @@ var coin = {
            let main = document.getElementById("main")
             if(coin.toString() === "H"){
                img.src = "headsCoin.jpg";
-                main.appendChild(img)
+                main.appendChild(img);
+                let coinHeads = document.createTextNode("Heads ");
+                main.appendChild(coinHeads)
+               
                 
             }else {
                 img.src ="tails.jpg"
                 main.appendChild(img);
+                let coinTails = document.createTextNode("Tails ")
+                main.appendChild(coinTails)
             
             }
         // set the properties of the image element to show either heads or tails
@@ -35,4 +45,5 @@ for(i = 0; i < 20; i++){
 coin.flip();
 coin.toString();
 coin.toHTML();
+
 }
